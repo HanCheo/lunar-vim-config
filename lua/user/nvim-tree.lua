@@ -3,6 +3,7 @@ lvim.builtin.nvimtree.setup.filters = {
   gitignore = true,
 }
 
+local isWidened = false
 lvim.builtin.nvimtree.setup.on_attach = function(bufnr)
   local api = require "nvim-tree.api"
   local view = require "nvim-tree.view"
@@ -17,7 +18,6 @@ lvim.builtin.nvimtree.setup.on_attach = function(bufnr)
   -- custom mappings
   vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
 
-  local isWidened = false
   vim.keymap.set('n', 'e', function()
     if isWidened then
       view.resize("-50")
