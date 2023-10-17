@@ -17,14 +17,14 @@ lvim.builtin.nvimtree.setup.on_attach = function(bufnr)
   -- custom mappings
   vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
 
-  local resized = false
+  local isWidened = false
   vim.keymap.set('n', 'e', function()
-    if resized then
+    if isWidened then
       view.resize("-50")
-      resized = false
+      isWidened = false
     else
       view.resize("+50")
-      resized = true
+      isWidened = true
     end
   end, opts("width size toggle"))
 end
