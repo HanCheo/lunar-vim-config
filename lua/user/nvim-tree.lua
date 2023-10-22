@@ -2,6 +2,11 @@ lvim.builtin.nvimtree.setup.filters = {
   dotfiles = true,
 }
 
+lvim.builtin.nvimtree.setup.update_focused_file = {
+  enable = true,
+  update_root = false,
+}
+
 local isWidened = false
 lvim.builtin.nvimtree.setup.on_attach = function(bufnr)
   local api = require "nvim-tree.api"
