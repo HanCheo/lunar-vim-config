@@ -53,16 +53,32 @@ lvim.plugins = {
     -- show nvim-lsp status right bottom
     'j-hui/fidget.nvim',
     tag = 'legacy',
-    config = function()
-      require("fidget").setup {
-        -- options
-      }
-    end,
   },
   {
     'roxma/nvim-yarp'
   },
   {
     'roxma/vim-hug-neovim-rpc'
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    after = "nvim-treesitter",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+  },
+  {
+    "RRethy/nvim-treesitter-textsubjects",
+    after = "nvim-treesitter",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+  },
+  {
+    -- Create annotations with one keybind, and jump your cursor in the inserted annotation
+    "danymat/neogen",
+    config = function()
+      require("neogen").setup {
+        enable = true,
+        input_after_command = true,
+      }
+    end,
+    dependencies = "nvim-treesitter/nvim-treesitter",
   }
 }
