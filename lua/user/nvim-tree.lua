@@ -1,6 +1,5 @@
 lvim.builtin.nvimtree.setup.filters = {
   dotfiles = true,
-  gitignore = true,
 }
 
 local isWidened = false
