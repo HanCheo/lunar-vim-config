@@ -39,5 +39,30 @@ lvim.plugins = {
       require("gitblame").setup { enabled = false }
     end,
   },
-  { 'mg979/vim-visual-multi' }
+  { 'mg979/vim-visual-multi' },
+  {
+    -- Automatically provides suggestions type : /
+    -- need UpdateRemotePlugins
+    'gelguy/wilder.nvim',
+    after = ':UpdateRemotePlugins',
+    config = function()
+      -- config goes here
+    end,
+  },
+  {
+    -- show nvim-lsp status right bottom
+    'j-hui/fidget.nvim',
+    tag = 'legacy',
+    config = function()
+      require("fidget").setup {
+        -- options
+      }
+    end,
+  },
+  {
+    'roxma/nvim-yarp'
+  },
+  {
+    'roxma/vim-hug-neovim-rpc'
+  }
 }
